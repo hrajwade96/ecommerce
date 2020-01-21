@@ -41,8 +41,13 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
-
-
+        btn_rec.setOnClickListener{
+            var intent = Intent(this,RecActivity::class.java)
+            startActivity(intent)
+        }
+        btn_big.setOnClickListener{
+            var intent= Intent(this,BigJsonActivity::class.java)
+        }
 
     }
 }
