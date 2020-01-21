@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_layout_bigjson.view.*
 
 class BigJsonAdapter(val postList: List<AllMovy>, val context: Context) :
@@ -22,8 +23,13 @@ class BigJsonAdapter(val postList: List<AllMovy>, val context: Context) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemView.tv.text = "${postList[position].backdrop_path}"
+        var movObj = postList[position]
+        holder.itemView.tv_movie_name.text = "${movObj.title}"
 
+
+        Picasso.get()
+            .load(movObj.backdrop_path)
+            .into(holder.itemView.img_movie)
 
 //        holder.itemView.tv.text = ""+postList[position].allMovies[0]
 //        holder.itemView.tv1.text = ""+postList[position].allMovies[1]
