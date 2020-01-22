@@ -18,6 +18,8 @@ class BigJsonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_big_json)
+
+        rv2.setHasFixedSize(true)
         rv2.layoutManager = LinearLayoutManager(this)
 
         val retrofit = Retrofit.Builder().addConverterFactory(

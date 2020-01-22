@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+<<<<<<< HEAD
     android:orientation="horizontal" android:layout_width="match_parent"
     android:id="@+id/layout_id"
     android:layout_height="300dp">
@@ -32,7 +33,36 @@
         android:fontFamily="casual"
         android:text="Hello"
         android:textSize="16dp"></TextView>
+=======
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="160dp"
+        android:layout_height="100dp">
+
+>>>>>>> 4ccd9e1cce8d45693be16a558acf9b603513ecb3
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/img_movie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+<<<<<<< HEAD
+=======
+    <TextView
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="12sp"
+        android:id="@+id/tv_movie_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+>>>>>>> 4ccd9e1cce8d45693be16a558acf9b603513ecb3
 
 </LinearLayout>
