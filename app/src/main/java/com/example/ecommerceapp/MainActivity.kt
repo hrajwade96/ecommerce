@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
         btn_big.setOnClickListener{
             var intent= Intent(this,BigJsonActivity::class.java)
+            startActivity(intent)
         }
 
     }

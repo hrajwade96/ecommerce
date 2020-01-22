@@ -2,6 +2,7 @@ package com.example.ecommerceapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -29,16 +30,22 @@ class BigJsonActivity : AppCompatActivity() {
 
         var response = postsApi.getAllMovies()
 
-        response.observeOn(AndroidSchedulers.mainThread()).subscribeOn(IoScheduler()).subscribe {
-                abc ->
+        response
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(IoScheduler())
+            .subscribe({s->
+                val postList = s.body()
+                postList?.let {
+                    rv2.adapter = BigJsonAdapter(it.allMovies, this)
+                }
+            },{error ->
+                Toast.makeText(this,"${error.message}", Toast.LENGTH_SHORT).show()
+            })
 
-            val postList = abc.body()
 
-            postList?.let {
 
-                rv2.adapter = BigJsonAdapter(it.allMovies, this)
-            }
-        }
+
+
 
 
     }
